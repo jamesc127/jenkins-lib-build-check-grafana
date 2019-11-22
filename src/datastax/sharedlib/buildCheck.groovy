@@ -13,3 +13,5 @@ def runStDevCheck(startTime,endTime,baseline,tolerance,dseHost,grafanaHost) {
         }
     }
 }
+
+return this
