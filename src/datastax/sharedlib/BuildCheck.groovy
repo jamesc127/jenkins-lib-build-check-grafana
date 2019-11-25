@@ -1,10 +1,7 @@
 package datastax.sharedlib
 
 def runStDevCheck(startTime,endTime,baseline,tolerance,dseHost,grafanaHost) {
-    echo 'does this work?'
-    sh 'sudo chmod +x ./run-stdev-check.sh'
-    sh "(./run-stdev-check.sh ${startTime} ${endTime} ${BUILD_ID} ${baseline} ${tolerance} ${dseHost} ${grafanaHost}) || true"
-    echo 'does this still work?'
+    sh "(java -Dconfig.file=./BuildCheck.json -Djenkins.xmlfilepath=. -Dgrafana.start-time=${startTime} -Dgrafana.end-time=${endTime} -Djenkins.build=${BUILD_ID} -Djenkins.baseline=${baseline} -Djenkins.stdevtolerance=${tolerance} -Ddse.host=${dseHost} -Dgrafana.host=${grafanaHost} -jar stdevcheck) || true"
 }
 
 def collectJUnit(){
