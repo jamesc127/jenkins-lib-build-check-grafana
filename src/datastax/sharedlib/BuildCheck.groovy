@@ -1,6 +1,6 @@
 package datastax.sharedlib
 
-@GrabResolver(name = 'com.datastax', root = 'https://maven.pkg.github.com/jamesc127', m2Compatible = true)
+//@GrabResolver(name = 'datastax', root = 'https://maven.pkg.github.com/jamesc127/jenkins-dse-build-compare/', m2Compatible = false)
 @Grab(group = 'com.datastax', module = 'jenkins-dse-build-compare', version = '1.2')
 
 import com.datastax.BuildCompare
